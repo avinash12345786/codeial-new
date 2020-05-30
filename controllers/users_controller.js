@@ -8,9 +8,15 @@ module.exports.profile=function(req,res){
 
 //itle:"profile"
 
-return res.render('user_profile', {
-    title: 'User Profile'
-})
+User.findById(req.params.id,function(err,user){
+    return res.render('user_profile', {
+        title: 'User Profile',
+        profile_user:user
+
+    });
+});
+
+
 }
 
 //render the signUp page
