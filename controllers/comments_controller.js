@@ -8,7 +8,7 @@ module.exports.create=async function(req,res){
 
 
         if(post){
-         let comments=await Comment.create({
+         let comment=await Comment.create({
 
                 content:req.body.content,
                 post:req.body.post,
