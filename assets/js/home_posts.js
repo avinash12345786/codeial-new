@@ -75,6 +75,7 @@ let deletePost=function(deleteLink){
         e.preventDefault();
 
         $.ajax({
+            type:'get',
             url:$(deleteLink).prop('href'),
             success:function(data){
                 $(`#post-${data.data.post_id}`).remove();
