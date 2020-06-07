@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="/css/home.css">
 
-
+<% if (locals.user){ %>
 <div id="home-container">
 <section id="feed-posts">
         <h4>Posts</h4>
@@ -35,5 +35,6 @@
 
 </section>
 </div>
+<%} %>
 <script src="/js/home_posts.js"></script>
         

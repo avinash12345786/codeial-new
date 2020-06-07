@@ -1,5 +1,9 @@
 #layout-footer{
     color: white;
+    position:relative;
+     top:66%;
+     height:20%;
+     width:100%;
     a{
         color: white;
         text-decoration: none;
@@ -9,6 +13,7 @@
     padding: 5px 10px;
     display: flex;
     justify-content: flex-start;
+    
 
     .footer-nav{
         ul{
