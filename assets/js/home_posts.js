@@ -24,8 +24,7 @@ let createPost = function () {
 
 //method to create a post in dom
 let newPostDom = function (post) {
-    return $(`<li id=post-${post._id})">
-
+    return $(`<li id="post-${post._id}">
     <p>
     
     <small>
@@ -37,7 +36,6 @@ let newPostDom = function (post) {
             <small>
                     ${post.user.name}
             </small>
-    
 
     </p>
    
@@ -48,12 +46,7 @@ let newPostDom = function (post) {
             <input type="text" name="content" placeholder="Type here to add comments..."required>
             <input type="hidden" name="post" value="${post._id}">
             <input type="submit" value="Add comment">
-    
-    
     </form>            
-
-
-           
 
            <div class="post-comments-list">
                    <ul id="post-comments-${post._id}"> 
@@ -65,19 +58,20 @@ let newPostDom = function (post) {
            
            </div>
            </li>`)
-
 }
 
 //method to delete a Post from DOM
 
 let deletePost=function(deleteLink){
-    s(deleteLink).click(function(e){
+    $(deleteLink).click(function(e){
         e.preventDefault();
 
         $.ajax({
             type:'get',
             url:$(deleteLink).prop('href'),
             success:function(data){
+                console.log(data);
+                console.log($(`#post-${data.data.post_id}`))
                 $(`#post-${data.data.post_id}`).remove();
 
             },error:function(error){
@@ -89,7 +83,7 @@ let deletePost=function(deleteLink){
     });
 }
 
-createPost();
-      
+createPost();// 
+ //server restart krpo
 
 
