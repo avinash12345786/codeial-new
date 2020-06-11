@@ -20,7 +20,7 @@ ejs.renderFile(
         path.join(__dirname,'../views/mailers',relativePath),
         data,
         function(err,template){
-            if(err){console.log('error in rendering  template');return}
+            if(err){console.log('error in rendering  template',err);return}
             mailHTML=template
         }
 
